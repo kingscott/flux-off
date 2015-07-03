@@ -1,0 +1,37 @@
+{
+  "name": "flux-off",
+  "version": "1.0.0",
+  "description": "A small application using React.js and the Flux architecture.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingscott/flux-off.git"
+  },
+  "author": "Scott King",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kingscott/flux-off/issues"
+  },
+  "homepage": "https://github.com/kingscott/flux-off#readme",
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browser-sync": "^2.7.13",
+    "browserify": "^10.2.4",
+    "flux": "^2.0.3",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-if": "^1.2.5",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "lazypipe": "^1.0.1",
+    "lodash": "^3.10.0",
+    "react": "^0.13.3",
+    "run-sequence": "^1.1.1",
+    "through2": "^2.0.0",
+    "vinyl-transform": "^1.0.0"
+  }
+}

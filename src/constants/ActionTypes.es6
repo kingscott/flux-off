@@ -1,0 +1,4 @@
+export default ({
+  SET_COMPOSITE: 'SET_COMPOSITE',
+  LOAD_COMPONENT: 'LOAD_COMPONENT'
+});
