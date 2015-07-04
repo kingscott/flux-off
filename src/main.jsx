@@ -1,5 +1,5 @@
 import React from 'react';
-import components,  { config } from './src/Components/index';
+// import components,  { config } from './src/Components/index';
 import App from './src/app';
 
 let run = () => {

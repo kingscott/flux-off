@@ -15,9 +15,25 @@ var runSequence = require('run-sequence');
 
 var src = {
   lib: 'src/**/*.*',
+  comps: 'src/**/**/*.*'
 };
 
-gulp.task('build:dist', function () {
+gulp.task('build:lib', function () {
+  var isModule = function (file) {
+    return /\.(jsx|es6)$/.test(file.relative);
+  };
+
+  var processModule = lazypipe()
+    .pipe(rename, { extname: '.js' })
+    .pipe(babel);
+
+  return gulp.src(src.lib)
+    .pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
+    .pipe(gulpif(isModule, processModule()))
+    .pipe(gulp.dest('lib'));
+});
+
+gulp.task('build:dist', ['build:lib'], function () {
   return gulp.src('src/main.jsx')
     .pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
     .pipe(through2.obj(function (file, enc, next) {
@@ -42,26 +58,5 @@ gulp.task('build:dist', function () {
 });
 
 gulp.task('build', [ 'build:dist' ]);
-
-// gulp.task('build:watch', function () {
-//   watch(src.lib, function () {
-//     runSequence('build', browserSync.reload);
-//   });
-// });
-//
-// gulp.task('sync', ['build'], function (cb) {
-//   browserSync({
-//     port: 5000,
-//     open: false,
-//     server: {
-//       baseDir: [ "./" ],
-//       index: "./index.html"
-//     }
-//   }, cb);
-//
-//   process.on('exit', function () {
-//     browserSync.exit();
-//   });
-// });
 
 gulp.task('default', [ 'build' ]);

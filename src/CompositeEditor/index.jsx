@@ -31,24 +31,24 @@ const CompositeEditor = React.createClass({
 
   mixins: [  ],
 
-  getInitialState () {
-    // return { compositeString: '' };
-  },
-
+  // getInitialState () {
+  //   // return { compositeString: '' };
+  // },
+  //
   onChange (event) {
     // let value = event.target.value;
     // this.setState({ compositeString: value });
   },
-
-  setComposite () {
-    // let comp = JSON.parse(this.state.compositeString);
-  },
+  //
+  // setComposite () {
+  //   // let comp = JSON.parse(this.state.compositeString);
+  // },
 
   render () {
     return (
       <div>
-        <button type="button" onClick={this.setComposite}>Update</button><br /><br />
-        <textarea rows="20" cols="60" value={'hello'} onChange={this.onChange}></textarea>
+        <button type="button" >Update</button><br /><br />
+        <textarea rows="20" cols="60" value='' onChange={this.onChange}></textarea>
       </div>
     );
   },
