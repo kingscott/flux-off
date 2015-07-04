@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var notify = reuqire('gulp-notify');
+var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var babel = require('gulp-babel');
 var rename = require('gulp-rename');
@@ -14,7 +14,7 @@ var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
 var src = {
-  lib: 'src/*.*'
+  lib: 'src/**/*.*',
 };
 
 gulp.task('build:dist', function () {
@@ -23,6 +23,7 @@ gulp.task('build:dist', function () {
     .pipe(through2.obj(function (file, enc, next) {
       browserify({
         debug: true,
+        basedir: './',
         extensions: [ '.jsx', '.es6' ]
       })
         .add(file)
@@ -40,27 +41,27 @@ gulp.task('build:dist', function () {
   .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['build:dist']);
+gulp.task('build', [ 'build:dist' ]);
 
-gulp.task('build:watch', function () {
-  watch(src.lib, function () {
-    runSequence('build', browserSync.reload);
-  });
-});
+// gulp.task('build:watch', function () {
+//   watch(src.lib, function () {
+//     runSequence('build', browserSync.reload);
+//   });
+// });
+//
+// gulp.task('sync', ['build'], function (cb) {
+//   browserSync({
+//     port: 5000,
+//     open: false,
+//     server: {
+//       baseDir: [ "./" ],
+//       index: "./index.html"
+//     }
+//   }, cb);
+//
+//   process.on('exit', function () {
+//     browserSync.exit();
+//   });
+// });
 
-gulp.task('sync', ['build'], function (cb) {
-  browserSync({
-    port: 5000,
-    open: false,
-    server: {
-      baseDir: [ "./" ],
-      index: "./index.html"
-    }
-  }, cb);
-
-  process.on('exit', function () {
-    browserSync.exit();
-  });
-});
-
-gulp.task('default', [ 'build', 'sync', 'build:watch' ]);
+gulp.task('default', [ 'build' ]);
