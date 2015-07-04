@@ -18,12 +18,12 @@ let AppStore = assign({}, EventEmitter.prototype, {
     this.emit(CHANGE_EVENT);
   },
 
-  onChange (cb) {
-    this.on(CHANGE_EVENT, cb);
+  onChange (callback) {
+    this.on(CHANGE_EVENT, callback);
   },
 
-  off (cb) {
-    this.off(CHANGE_EVENT, cb);
+  off (callback) {
+    this.off(CHANGE_EVENT, callback);
   }
 
 });
@@ -40,7 +40,7 @@ AppStore.dispatchToken = AppDispatcher.register((action) => {
     case ActionTypes.LOAD_COMPONENT:
       composite = immutableUpdate(composite, {
         components: {
-          $push: [ action.component ]
+          $push: [action.component]
         }
       });
       AppStore.emitChange();
@@ -48,7 +48,7 @@ AppStore.dispatchToken = AppDispatcher.register((action) => {
 
     default:
     // Do nothing
-    
+
   }
 
 });

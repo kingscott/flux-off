@@ -1,7 +1,9 @@
 import Anchor from './Anchor';
+import Button from './Button';
 
 export default {
-  Anchor: Anchor
+  Anchor: Anchor,
+  Button: Button
 }
 
 export const config = {
@@ -11,6 +13,12 @@ export const config = {
       name: 'Anchor',
       props: {
         source: { name: 'Source', type: 'string' }
+      }
+    },
+    Button: {
+      name: 'Button',
+      props: {
+        label: { name: 'Label', type: 'string' }
       }
     }
   }

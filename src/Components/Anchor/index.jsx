@@ -1,6 +1,6 @@
 import React from 'react';
-import ActionDispatcherMixin from '../Mixins/ActionDispatcherMixin';
-// import PureRenderMixin from 'react/addons';
+import ActionDispatcherMixin from '../../../lib/Mixins/ActionDispatcherMixin';
+import PureRenderMixin from 'react/addons';
 
 const Anchor = React.createClass({
 

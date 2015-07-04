@@ -1,10 +1,10 @@
-// import components, { config } from './Components/index';
+import components, { config } from '../lib/Components/index';
 import AppStore from './stores/AppStore';
 import AppActions from './actions/AppActions';
 import CompositeEditor from './CompositeEditor';
 import React from 'react';
-// import PureRenderMixin from 'react/addons';
-import createActions from './Mixins/createActions';
+import PureRenderMixin from 'react/addons';
+import createActions from '../lib/Mixins/createActions';
 
 let actions = createActions('value');
 
@@ -24,53 +24,50 @@ const App = React.createClass({
 
   mixins: [  ],
 
-  // getInitialState () {
-  //   return getAppState();
-  // },
+  getInitialState () {
+    return getAppState();
+  },
 
   onChange2 (event) {
-    // let value = event.target.value;
-    // let ret = config.components[value];
-    // let props = Object.keys(ret.props);
-    // let component = { type: '', props: {} };
-    // component.type = value;
-    // props.forEach((elem, index) => {
-    //   component.props[elem] = "";
-    // });
-    // AppActions.loadComponent(component);
+    let value = event.target.value;
+    let ret = config.components[value];
+    let props = Object.keys(ret.props);
+    let component = { type: '', props: {} };
+    component.type = value;
+    props.forEach((elem, index) => {
+      component.props[elem] = "";
+    });
+    AppActions.loadComponent(component);
   },
 
   render () {
-    // let comp = getComponents(config.components);
+    let comp = getComponents(config.components);
     return (
       <div>
         <select onChange={this.onChange2}>
           <option value=""></option>
-          {  }
+          { comp.map((str) => {
+            return <option value={str}>{str}</option>
+          }) }
         </select>
         <br /><br />
         <CompositeEditor />
         <br />
-
-      </div>
+    </div>
     );
   },
 
-  // updateState () {
-  //   this.setState(getAppState());
-  // },
-  //
-  // componentDidMount () {
-  //   AppStore.onChange(this.updateState);
-  // },
-  //
-  // componentWillMount () {
-  //   AppStore.off(this.updateState);
-  // }
+  updateState () {
+    this.setState(getAppState());
+  },
 
-  // comp.map((str) => {
-  //   return <option value={str}>{str}</option>
-  // })
+  componentDidMount () {
+    AppStore.onChange(this.updateState);
+  },
+
+  componentWillMount () {
+    AppStore.off(this.updateState);
+  }
 
 });
 
