@@ -51,7 +51,7 @@ const App = React.createClass({
           }) }
         </select>
         <br /><br />
-        <CompositeEditor />
+        <CompositeEditor composite={this.state.composite}/>
         <br />
     </div>
     );

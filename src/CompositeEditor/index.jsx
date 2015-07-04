@@ -31,15 +31,15 @@ let replaceKey = (key, value) => {
 
 const CompositeEditor = React.createClass({
 
-  mixins: [  ],
+  mixins: [],
 
   getInitialState () {
-    return {compositeString: ''};
+    return { compositeString: '' };
   },
 
   onChange (event) {
     let value = event.target.value;
-    this.setState({compositeString: value});
+    this.setState({ compositeString: value });
   },
 
   setComposite () {
