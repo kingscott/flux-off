@@ -18,7 +18,22 @@ var src = {
   comps: 'src/**/**/*.*'
 };
 
-gulp.task('build:lib', function () {
+gulp.task('build:components', function () {
+  var isModule = function (file) {
+    return /\.(jsx|es6)$/.test(file.relative);
+  };
+
+  var processModule = lazypipe()
+    .pipe(rename, { extname: '.js' })
+    .pipe(babel);
+
+  return gulp.src(src.comps)
+    .pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
+    .pipe(gulpif(isModule, processModule()))
+    .pipe(gulp.dest('lib'));
+});
+
+gulp.task('build:lib', [ 'build:components' ], function () {
   var isModule = function (file) {
     return /\.(jsx|es6)$/.test(file.relative);
   };
