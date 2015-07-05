@@ -8,7 +8,6 @@ let fromJSON = (str) => {
     data = JSON.parse(str);
   } catch (e) {
     data = false;
-
   }
   return data;
 };
@@ -18,7 +17,7 @@ let toJSON = (obj) => {
   try {
     data = JSON.stringify(obj, replaceKey, 2);
   } catch (e) {
-
+    data = false;
   }
   return data;
 };

@@ -1,6 +1,5 @@
 import React from 'react';
-// import components,  { config } from './src/Components/index';
-import App from './src/app';
+import App from '.src/app';
 
 let run = () => {
   React.render(<App />, document.getElementById('test'));

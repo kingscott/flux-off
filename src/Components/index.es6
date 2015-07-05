@@ -15,11 +15,11 @@ export const config = {
         source: { name: 'Source', type: 'string' }
       }
     },
-    // Button: {
-    //   name: 'Button',
-    //   props: {
-    //     label: { name: 'Label', type: 'string' }
-    //   }
-    // }
+    Button: {
+      name: 'Button',
+      props: {
+        label: { name: 'Label', type: 'string' }
+      }
+    }
   }
 };
