@@ -19,7 +19,6 @@ const Button = React.createClass({
 
   onClick (event) {
     this.dispatch(actions.clicked);
-    alert("I've been clicked!");
   },
 
   render () {

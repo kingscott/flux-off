@@ -53,7 +53,7 @@ const App = React.createClass({
         <br /><br />
         <CompositeEditor composite={this.state.composite}/>
         <br />
-    </div>
+      </div>
     );
   },
 

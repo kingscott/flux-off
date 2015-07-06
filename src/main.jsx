@@ -1,5 +1,5 @@
 import React from 'react';
-import App from '.src/app';
+import App from './src/app';
 
 let run = () => {
   React.render(<App />, document.getElementById('test'));

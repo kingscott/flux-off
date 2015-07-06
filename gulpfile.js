@@ -33,7 +33,7 @@ gulp.task('build:components', function () {
     .pipe(gulp.dest('lib'));
 });
 
-gulp.task('build:lib', [ 'build:components' ], function () {
+gulp.task('build:lib', function () {
   var isModule = function (file) {
     return /\.(jsx|es6)$/.test(file.relative);
   };
@@ -48,7 +48,7 @@ gulp.task('build:lib', [ 'build:components' ], function () {
     .pipe(gulp.dest('lib'));
 });
 
-gulp.task('build:dist', ['build:lib'], function () {
+gulp.task('build:dist', [ 'build:lib', 'build:components' ], function () {
   return gulp.src('src/main.jsx')
     .pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
     .pipe(through2.obj(function (file, enc, next) {
@@ -73,5 +73,4 @@ gulp.task('build:dist', ['build:lib'], function () {
 });
 
 gulp.task('build', [ 'build:dist' ]);
-
 gulp.task('default', [ 'build' ]);

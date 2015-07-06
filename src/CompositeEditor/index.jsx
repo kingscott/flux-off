@@ -17,7 +17,7 @@ let toJSON = (obj) => {
   try {
     data = JSON.stringify(obj, replaceKey, 2);
   } catch (e) {
-    data = false;
+
   }
   return data;
 };
@@ -29,8 +29,7 @@ let replaceKey = (key, value) => {
 
 
 const CompositeEditor = React.createClass({
-
-  mixins: [],
+  mixins: [ ],
 
   getInitialState () {
     return { compositeString: '' };
@@ -56,7 +55,7 @@ const CompositeEditor = React.createClass({
   },
 
   componentWillMount () {
-    this.setState({compositeString: toJSON(this.props.composite)});
+    this.setState({ compositeString: toJSON(this.props.composite) });
   },
 
   componentWillReceiveProps (props) {
