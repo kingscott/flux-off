@@ -48,7 +48,7 @@ gulp.task('build:lib', function () {
     .pipe(gulp.dest('lib'));
 });
 
-gulp.task('build:dist', [ 'build:lib', 'build:components' ], function () {
+gulp.task('build:dist', [ 'build:lib' ], function () {
   return gulp.src('src/main.jsx')
     .pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
     .pipe(through2.obj(function (file, enc, next) {
