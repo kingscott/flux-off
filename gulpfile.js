@@ -72,5 +72,5 @@ gulp.task('build:dist', [ 'build:lib' ], function () {
   .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', [ 'build:dist' ]);
+gulp.task('build', [ 'build:dist', 'build:components' ]);
 gulp.task('default', [ 'build' ]);
