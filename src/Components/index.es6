@@ -1,12 +1,16 @@
 import Anchor from './Anchor';
 import Button from './Button';
 import TextField from './TextField';
+import Composite from './Composite';
+import CompositeLoader from './CompositeLoader';
 
 export default {
   Anchor: Anchor,
   Button: Button,
-  TextField: TextField
-}
+  TextField: TextField,
+  Composite: Composite,
+  CompositeLoader: CompositeLoader
+};
 
 export const config = {
   name: 'core',

@@ -1,8 +1,9 @@
 import React from 'react';
 import ActionDispatcherMixin from '../../mixins/ActionDispatcherMixin';
+import PureRenderMixin from 'react/lib/ReactComponentWithPureRenderMixin';
 
 var Anchor = React.createClass({
-  mixins: [ ActionDispatcherMixin ],
+  mixins: [ ActionDispatcherMixin, PureRenderMixin ],
 
   getDefaultProps () {
     return {

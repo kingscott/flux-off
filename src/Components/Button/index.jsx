@@ -1,12 +1,13 @@
 import React from 'react';
 import ActionDispatcherMixin from '../../mixins/ActionDispatcherMixin';
 import createActions from '../../mixins/createActions';
+import PureRenderMixin from 'react/lib/ReactComponentWithPureRenderMixin';
 
 var actions = createActions('clicked');
 
 var Button = React.createClass({
 
-  mixins: [ ActionDispatcherMixin ],
+  mixins: [ ActionDispatcherMixin, PureRenderMixin ],
 
   getDefaultProps () {
     return {

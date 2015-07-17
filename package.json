@@ -36,5 +36,8 @@
     "run-sequence": "^1.1.1",
     "through2": "^2.0.0",
     "vinyl-transform": "^1.0.0"
+  },
+  "dependencies": {
+    "wolfy87-eventemitter": "^4.2.11"
   }
 }

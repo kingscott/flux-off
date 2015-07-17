@@ -4,6 +4,7 @@ import AppActions from './actions/AppActions';
 import CompositeEditor from './CompositeEditor';
 import React from 'react';
 import createActions from './mixins/createActions';
+import PureRenderMixin from 'react/lib/ReactComponentWithPureRenderMixin';
 
 let actions = createActions('value');
 
@@ -17,11 +18,11 @@ const getAppState = () => {
   };
 };
 
-// let CompositeLoader = components.CompositeLoader;
+let CompositeLoader = components.CompositeLoader;
 
 const App = React.createClass({
 
-  mixins: [],
+  mixins: [ PureRenderMixin ],
 
   getInitialState () {
     return getAppState();
@@ -51,6 +52,8 @@ const App = React.createClass({
         </select>
         <br /><br />
         <CompositeEditor composite={this.state.composite}/>
+        <br />
+        <CompositeLoader />
       </div>
     );
   },
