@@ -1,7 +1,7 @@
-import ActionDispatcher from '../../mixins/ActionDispatcher';
 import React from 'react';
 import Store from '../../mixins/Store';
 import BindingProvider from '../../mixins/BindingProvider';
+import ActionDispatcher from '../../mixins/ActionDispatcher';
 import createActions from '../../mixins/createActions';
 import getCompositeDependencies from '../../mixins/getCompositeDependencies';
 import PureRenderMixin from 'react/lib/ReactComponentWithPureRenderMixin';
@@ -12,7 +12,7 @@ let myDispatcher = new ActionDispatcher();
 
 const CompositeLoader = React.createClass({
 
-  mixins: [],
+  mixins: [ PureRenderMixin ],
 
   getInitialState () {
     return {
@@ -24,7 +24,7 @@ const CompositeLoader = React.createClass({
     let imports = this.props.imports;
     let boundComponents = this.state.bindingProvider.applyBindings(this.props.composite.components);
     return (
-      <Composite style={this.getStyles()} components={boundComponents} imports={imports} dispatcher={myDispatcher} />
+      <Composite components={boundComponents} imports={imports} dispatcher={myDispatcher} />
     );
   },
 

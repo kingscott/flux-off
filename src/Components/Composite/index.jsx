@@ -1,13 +1,17 @@
 import React from 'react';
-import isString from 'lodash/lang/isString';
 import PureRenderMixin from 'react/lib/ReactComponentWithPureRenderMixin';
+import isString from 'lodash/lang/isString';
 
 var Composite = React.createClass({
 
-  mixins: [],
+  mixins: [ PureRenderMixin ],
 
   childContextTypes: {
     theme: React.PropTypes.object
+  },
+
+  getChildContext () {
+    return true;
   },
 
   renderComponentTree ({ address, type, props = {}, components }) {
@@ -37,7 +41,7 @@ var Composite = React.createClass({
   },
 
   render () {
-    return this.renderComponentTree({ type: 'div', props: { style: this.props.style }, components: this.props.components });
+    return this.renderComponentTree({ type: 'div', props: {}, components: this.props.components });
   }
 
 });

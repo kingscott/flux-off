@@ -7,9 +7,9 @@ import CompositeLoader from './CompositeLoader';
 export default {
   Anchor: Anchor,
   Button: Button,
-  TextField: TextField,
   Composite: Composite,
-  CompositeLoader: CompositeLoader
+  CompositeLoader: CompositeLoader,
+  TextField: TextField
 };
 
 export const config = {

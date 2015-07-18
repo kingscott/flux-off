@@ -51,9 +51,9 @@ const App = React.createClass({
           }) }
         </select>
         <br /><br />
-        <CompositeEditor composite={this.state.composite}/>
+        <CompositeEditor composite={this.state.composite} />
         <br />
-        <CompositeLoader />
+        <CompositeLoader composite={this.state.composite} import={components} />
       </div>
     );
   },

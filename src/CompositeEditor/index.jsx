@@ -1,6 +1,7 @@
 // import ....
 import AppActions from '../actions/AppActions';
 import React from 'react';
+import PureRenderMixin from 'react/lib/ReactComponentWithPureRenderMixin';
 
 let fromJSON = (str) => {
   let data;
@@ -29,7 +30,7 @@ let replaceKey = (key, value) => {
 
 const CompositeEditor = React.createClass({
 
-  mixins: [],
+  mixins: [ PureRenderMixin ],
 
   getInitialState () {
     return { compositeString: '' };
