@@ -1,2 +1,2 @@
 # flux-off
-A small application using React.js and the Flux architecture.
+A small application using React.js and a handmade Flux implementation.
