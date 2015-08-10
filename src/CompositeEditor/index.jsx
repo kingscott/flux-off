@@ -24,7 +24,7 @@ let toJSON = (obj) => {
 };
 
 let replaceKey = (key, value) => {
-  let invalidKeys = {bindingContext: true, $dispatcher: true};
+  let invalidKeys = { bindingContext: true, $dispatcher: true };
   return key in invalidKeys ? undefined : value;
 };
 
