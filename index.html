@@ -27,13 +27,24 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h3><a id="intro-flux-off" class="anchor" href="#intro-flux-off" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flux-off m8!</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub for Mac or GitHub for Windows, simply sync your repository and you’ll see the new branch.</p>
+        <p>Flux-off is a small and naive introduction to the Flux program architecture and React.js. Flux is not a framework or library, it is a program architecture that enforces certain principles to be considered a Flux application. <br /><br />
 
-<div id="test"></div>
-<script src="./dist/main.js"></script>
+        The Flux 'flow' looks like this: <br/ >
+
+        <code>
+          Action -> Dispatcher -> Store -> View
+        </code><br />
+
+        Flux harps on unidirectional data flow and the idea that we don't want to directly mutate state. <br /><br />
+
+        Flux brings a lot to the table in terms of modularity and organization. The main three things we need when creating a Flux application is: a dispatcher, store(s) and views. The views are are at the 'bottom', where they receive data from the stores which are passed down to children. Actions, also referred to as dispatcher methods, are an index for the types of changes/events that take place within the application. <br /><br />
+
+        When a user interacts with a view, an acton is dispatched through the store, it is then passed down to the view which is trigger a virtual DOM render and diff from the actual DOM. If something in the view has changed, an action is dispatched and the cycle continues. </p><br />
+
+        <div id="test"></div>
+        <script src="./dist/main.js"></script>
 
       </section>
     </div>
@@ -43,3 +54,4 @@
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
 
   </body>
+</html>

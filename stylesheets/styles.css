@@ -258,6 +258,10 @@ table {
   border-collapse: collapse;
 }
 
+textarea {
+  max-width: 593px;
+}
+
 th, td {
   text-align: left;
   padding: 5px 10px;
