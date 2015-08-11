@@ -50,7 +50,7 @@ const CompositeEditor = React.createClass({
     return (
       <div>
         <button type="button" onClick={this.setComposite}>Update</button><br /><br />
-        <textarea rows="20" cols="82" value={this.state.compositeString}
+        <textarea rows="20" cols="83" value={this.state.compositeString}
         onChange={this.onChange}></textarea>
       </div>
     );
